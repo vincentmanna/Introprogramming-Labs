@@ -5,10 +5,13 @@ def myname(gamename):
 def main():
     gamename = "PYTHON GUESSING GAME"
     myname(gamename)
+    print("To quit the game, type 'quit'")
+    print()
     print("I am thinking of a farm animal..")
 
     guess = input("Guess the animal I am thinking of! ")
     answer = "pig"
+    quitt = "quit"
     x = not answer
 
     while guess != x:
@@ -17,6 +20,10 @@ def main():
 
         if guess == answer:
             print("Congratulations! You guessed it!")
+            break
+
+        elif guess == quitt:
+            print("The game is over")
             break
 
 
