@@ -24,22 +24,31 @@ def mypassword():
     while True:
         if len(passwd) >= 8:
             print("Your password is strong!")
-            print("Your password is: " + passwd)
-            break
         else:
             print("Your password is weak! Must be 8 characters or more.")
             passwd = input("Create a new password: ")
+
+        if not any(char.isupper() for char in passwd):
+            print('Password must have at least on uppercase letter')
+            passwd = input("Create a new password: ")
+        elif not any(char.islower() for char in passwd):
+            print('Password must have at least on lowercase letter')
+            passwd = input("Create a new password: ")
+        else:
+            print('Looks good!')
+            break
 
     return passwd
 
 
 def main():
     first, last = myname()
-    print(first, last)
+    print('Name: ', first, last)
     mar1, mar2 = maristname()
-    print(mar1 + first + '.' + last + mar2)
+    print(mar1 + first.lower() + '.' + last.lower() + mar2.lower())
     passwd = mypassword()
-    print(passwd)
+    print('Your password is: ' + passwd)
 
 
 main()
+
