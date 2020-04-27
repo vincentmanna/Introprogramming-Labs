@@ -1,7 +1,7 @@
 # CMPT 120 Intro to Programming
 # Lab #7 – Lists and Error Handling
 # Author: Vincent Manna
-# Created: 2020-04-26
+# Created: 2020-04-27
 
 class Product:
 
